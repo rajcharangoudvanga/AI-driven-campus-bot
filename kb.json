@@ -1,0 +1,4 @@
+{
+  "G3": {"building":"Academic Block A","floor":"Ground","room":"G3","coords":[17.445,78.345],"desc":"Lecture Theatre G3"},
+  "Library": {"building":"Central Library","floor":"1","room":"Main","coords":[17.446,78.346],"desc":"Library main hall"}
+}

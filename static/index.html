@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Navigation Assistant</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .chat-container {
+      width: 400px;
+      max-width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .chat-header {
+      background: #0056d6;
+      color: #fff;
+      padding: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .chat-body {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      background: #f9fbfc;
+    }
+    .message {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+    .user {
+      background: #0056d6;
+      color: #fff;
+      margin-left: auto;
+      border-bottom-right-radius: 2px;
+    }
+    .bot {
+      background: #e5e7eb;
+      color: #333;
+      margin-right: auto;
+      border-bottom-left-radius: 2px;
+    }
+    .chat-footer {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+    .chat-footer input {
+      flex: 1;
+      border: none;
+      padding: 14px;
+      font-size: 14px;
+      outline: none;
+    }
+    .chat-footer button {
+      background: #0056d6;
+      color: #fff;
+      border: none;
+      padding: 14px 18px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+    .chat-footer button:hover {
+      background: #003d99;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header">Campus Navigation Assistant</div>
+    <div class="chat-body" id="chat"></div>
+    <div class="chat-footer">
+      <input id="m" placeholder="Ask me something..." onkeypress="if(event.key==='Enter'){send();}"/>
+      <button onclick="send()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    async function send(){
+      const input = document.getElementById("m");
+      const chat = document.getElementById("chat");
+      const msg = input.value.trim();
+      if(!msg) return;
+
+      // Add user message
+      chat.innerHTML += `<div class="message user"> ${msg} </div>`;
+      chat.scrollTop = chat.scrollHeight;
+
+      // Send to backend
+      const res = await fetch("/api/message", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message: msg})
+      });
+      const data = await res.json();
+
+      // Add bot reply
+      chat.innerHTML += `<div class="message bot"> ${data.reply} </div>`;
+      if(data.loc){
+        chat.innerHTML += `<div class="message bot"><i>📍 Coords:</i> ${data.loc.coords}</div>`;
+      }
+      chat.scrollTop = chat.scrollHeight;
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

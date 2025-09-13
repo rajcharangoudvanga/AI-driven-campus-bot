@@ -1,0 +1,14 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey"],
+      "responses": ["Hello! How can I help you find a place?"]
+    },
+    {
+      "tag": "find_location",
+      "patterns": ["where is G3", "where is the library", "find G3", "locate library"],
+      "responses": ["Searching for location..."]
+    }
+  ]
+}
