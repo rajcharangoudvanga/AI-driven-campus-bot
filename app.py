@@ -20,7 +20,7 @@ def message():
     x = vec.transform([text])
     tag = clf.predict(x)[0]
 
-    # ---- Intent Handlers ----
+
     if tag == "greeting":
         return jsonify({"reply": "Hello! How can I help you find a place?"})
 
@@ -54,14 +54,14 @@ def message():
                 loc = ent.text
                 break
 
-        # Try keyword-based detection
+       
         if not loc:
             for k in kb:
                 if k.lower() in text.lower():
                     loc = k
                     break
 
-        # Respond if location is found
+        
         if loc:
             info = kb.get(loc)
             return jsonify({
@@ -69,7 +69,7 @@ def message():
                 "loc": info
             })
 
-    # ---- Fallback ----
+    
     return jsonify({"reply": "Sorry, I couldn't find that location. Can you rephrase?"})
 
 
