@@ -1,4 +1,86 @@
 {
-  "G3": {"building":"Academic Block A","floor":"Ground","room":"G3","coords":[17.445,78.345],"desc":"Lecture Theatre G3"},
-  "Library": {"building":"Central Library","floor":"1","room":"Main","coords":[17.446,78.346],"desc":"Library main hall"}
+  "G3": {
+    "building": "Academic Block A",
+    "floor": "Ground",
+    "room": "G3",
+    "coords": [17.445, 78.345],
+    "desc": "Lecture Theatre G3"
+  },
+  "Library": {
+    "building": "Central Library",
+    "floor": "1",
+    "room": "Main",
+    "coords": [17.446, 78.346],
+    "desc": "Main Library Hall with study resources"
+  },
+  "Auditorium": {
+    "building": "Main Block",
+    "floor": "2",
+    "room": "Auditorium Hall",
+    "coords": [17.447, 78.347],
+    "desc": "Large auditorium for events and seminars"
+  },
+  "Canteen": {
+    "building": "Food Court",
+    "floor": "Ground",
+    "room": "C1",
+    "coords": [17.448, 78.348],
+    "desc": "Canteen serving food and beverages"
+  },
+  "Hostel": {
+    "building": "Student Hostel",
+    "floor": "Multiple",
+    "room": "Reception",
+    "coords": [17.449, 78.349],
+    "desc": "Residential hostel for students"
+  },
+  "Parking": {
+    "building": "Parking Lot",
+    "floor": "Ground",
+    "room": "Zone A",
+    "coords": [17.450, 78.350],
+    "desc": "Main parking facility for students and staff"
+  },
+  "Sports Complex": {
+    "building": "Sports Block",
+    "floor": "Ground",
+    "room": "Main Arena",
+    "coords": [17.451, 78.351],
+    "desc": "Indoor and outdoor sports facilities"
+  },
+  "Computer Lab": {
+    "building": "Tech Block",
+    "floor": "1",
+    "room": "Lab 101",
+    "coords": [17.452, 78.352],
+    "desc": "Computer laboratory with 60 systems"
+  },
+  "Chemistry Lab": {
+    "building": "Science Block",
+    "floor": "2",
+    "room": "Lab 210",
+    "coords": [17.453, 78.353],
+    "desc": "Chemistry lab for experiments and research"
+  },
+  "Admin Office": {
+    "building": "Administration Block",
+    "floor": "Ground",
+    "room": "A01",
+    "coords": [17.454, 78.354],
+    "desc": "Campus administration office"
+  },
+  "Faculty Room": {
+    "building": "Academic Block B",
+    "floor": "1",
+    "room": "F12",
+    "coords": [17.455, 78.355],
+    "desc": "Faculty common room"
+  },
+  "Medical Center": {
+    "building": "Health Block",
+    "floor": "Ground",
+    "room": "M01",
+    "coords": [17.456, 78.356],
+    "desc": "Campus medical and health services"
+  }
 }
