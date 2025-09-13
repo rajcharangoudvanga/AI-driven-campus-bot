@@ -6,6 +6,31 @@
       "responses": ["Hello! How can I help you find a place?"]
     },
     {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you"],
+      "responses": ["Goodbye! Have a great day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "thx"],
+      "responses": ["You're welcome! Happy to help 😊"]
+    },
+    {
+      "tag": "time",
+      "patterns": ["what time is it", "current time", "tell me the time"],
+      "responses": ["Fetching current time..."]
+    },
+    {
+      "tag": "date",
+      "patterns": ["what's today's date", "today's date", "current date"],
+      "responses": ["Fetching today's date..."]
+    },
+    {
+      "tag": "facilities",
+      "patterns": ["what facilities are available", "list facilities", "campus facilities"],
+      "responses": ["We have Library, Auditorium, Labs, Hostel, Canteen, Parking, and Sports Complex."]
+    },
+    {
       "tag": "find_location",
       "patterns": ["where is G3", "where is the library", "find G3", "locate library"],
       "responses": ["Searching for location..."]
